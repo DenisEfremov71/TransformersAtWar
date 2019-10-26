@@ -1,0 +1,797 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B1B300D2364A87A00A01051 /* TransformerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */; };
+		7B1B300F2364AA0400A01051 /* TransformerListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */; };
+		7B1B30122364AA6400A01051 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B30112364AA6400A01051 /* KeychainHelper.swift */; };
+		7B1B30142364AF9A00A01051 /* TransformersApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B30132364AF9A00A01051 /* TransformersApiService.swift */; };
+		7B1B30162364B15500A01051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B30152364B15500A01051 /* Constants.swift */; };
+		7B2A9E8D236495190091492C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A9E8C236495190091492C /* AppDelegate.swift */; };
+		7B2A9E92236495190091492C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2A9E90236495190091492C /* Main.storyboard */; };
+		7B2A9E942364951A0091492C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2A9E932364951A0091492C /* Assets.xcassets */; };
+		7B2A9E972364951A0091492C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2A9E952364951A0091492C /* LaunchScreen.storyboard */; };
+		7B2A9EA22364951B0091492C /* TransformersAtWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A9EA12364951B0091492C /* TransformersAtWarTests.swift */; };
+		7B2A9EAD2364951B0091492C /* TransformersAtWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A9EAC2364951B0091492C /* TransformersAtWarUITests.swift */; };
+		7B2A9EBF236499A80091492C /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A9EBE236499A80091492C /* Transformer.swift */; };
+		D640B1949938EEB9F6D4CEE5 /* Pods_TransformersAtWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0C7D3187510FBC7F810B9E /* Pods_TransformersAtWar.framework */; };
+		ED2EE9E4CCC298541BA2583F /* Pods_TransformersAtWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B630DF7C373734A7184FD6 /* Pods_TransformersAtWarTests.framework */; };
+		EEB4A1E1294E7485296C2B5C /* Pods_TransformersAtWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 875B4D4710F163BD8F29243E /* Pods_TransformersAtWarUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B2A9E9E2364951B0091492C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B2A9E81236495190091492C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B2A9E88236495190091492C;
+			remoteInfo = TransformersAtWar;
+		};
+		7B2A9EA92364951B0091492C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B2A9E81236495190091492C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B2A9E88236495190091492C;
+			remoteInfo = TransformersAtWar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3682F95F7725729687A1628C /* Pods-TransformersAtWarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWarTests.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWarTests/Pods-TransformersAtWarTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A0C7D3187510FBC7F810B9E /* Pods_TransformersAtWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersAtWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B630DF7C373734A7184FD6 /* Pods_TransformersAtWarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersAtWarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C9AF58F0E48BCFDD7C5D2D /* Pods-TransformersAtWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWar.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar.release.xcconfig"; sourceTree = "<group>"; };
+		7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListTableViewController.swift; sourceTree = "<group>"; };
+		7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListPresenter.swift; sourceTree = "<group>"; };
+		7B1B30112364AA6400A01051 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		7B1B30132364AF9A00A01051 /* TransformersApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersApiService.swift; sourceTree = "<group>"; };
+		7B1B30152364B15500A01051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B2A9E89236495190091492C /* TransformersAtWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersAtWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2A9E8C236495190091492C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B2A9E91236495190091492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7B2A9E932364951A0091492C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B2A9E962364951A0091492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7B2A9E982364951A0091492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2A9E9D2364951B0091492C /* TransformersAtWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAtWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2A9EA12364951B0091492C /* TransformersAtWarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAtWarTests.swift; sourceTree = "<group>"; };
+		7B2A9EA32364951B0091492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2A9EA82364951B0091492C /* TransformersAtWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAtWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2A9EAC2364951B0091492C /* TransformersAtWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAtWarUITests.swift; sourceTree = "<group>"; };
+		7B2A9EAE2364951B0091492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2A9EBE236499A80091492C /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		81061478319C1DDF6F3F498D /* Pods-TransformersAtWarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWarUITests.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWarUITests/Pods-TransformersAtWarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		875B4D4710F163BD8F29243E /* Pods_TransformersAtWarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersAtWarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9078EA539C8B635DFAF4B151 /* Pods-TransformersAtWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-TransformersAtWarUITests/Pods-TransformersAtWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6D848BDE259D9B7FAB5D44E /* Pods-TransformersAtWarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWarTests.debug.xcconfig"; path = "Target Support Files/Pods-TransformersAtWarTests/Pods-TransformersAtWarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D77C05A544E7DEAD8E261FFC /* Pods-TransformersAtWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWar.debug.xcconfig"; path = "Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B2A9E86236495190091492C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D640B1949938EEB9F6D4CEE5 /* Pods_TransformersAtWar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9E9A2364951B0091492C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED2EE9E4CCC298541BA2583F /* Pods_TransformersAtWarTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9EA52364951B0091492C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEB4A1E1294E7485296C2B5C /* Pods_TransformersAtWarUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CFF06A1FC71EE0B9E5AF104 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D77C05A544E7DEAD8E261FFC /* Pods-TransformersAtWar.debug.xcconfig */,
+				79C9AF58F0E48BCFDD7C5D2D /* Pods-TransformersAtWar.release.xcconfig */,
+				B6D848BDE259D9B7FAB5D44E /* Pods-TransformersAtWarTests.debug.xcconfig */,
+				3682F95F7725729687A1628C /* Pods-TransformersAtWarTests.release.xcconfig */,
+				9078EA539C8B635DFAF4B151 /* Pods-TransformersAtWarUITests.debug.xcconfig */,
+				81061478319C1DDF6F3F498D /* Pods-TransformersAtWarUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		74092607F62DB6C286C5D29C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A0C7D3187510FBC7F810B9E /* Pods_TransformersAtWar.framework */,
+				69B630DF7C373734A7184FD6 /* Pods_TransformersAtWarTests.framework */,
+				875B4D4710F163BD8F29243E /* Pods_TransformersAtWarUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B1B300B2364A7B000A01051 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		7B1B30102364AA3400A01051 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7B1B30112364AA6400A01051 /* KeychainHelper.swift */,
+				7B1B30152364B15500A01051 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7B2A9E80236495190091492C = {
+			isa = PBXGroup;
+			children = (
+				7B2A9E8A236495190091492C /* Products */,
+				7B2A9E8B236495190091492C /* TransformersAtWar */,
+				7B2A9EA02364951B0091492C /* TransformersAtWarTests */,
+				7B2A9EAB2364951B0091492C /* TransformersAtWarUITests */,
+				3CFF06A1FC71EE0B9E5AF104 /* Pods */,
+				74092607F62DB6C286C5D29C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7B2A9E8A236495190091492C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B2A9E89236495190091492C /* TransformersAtWar.app */,
+				7B2A9E9D2364951B0091492C /* TransformersAtWarTests.xctest */,
+				7B2A9EA82364951B0091492C /* TransformersAtWarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B2A9E8B236495190091492C /* TransformersAtWar */ = {
+			isa = PBXGroup;
+			children = (
+				7B2A9E8C236495190091492C /* AppDelegate.swift */,
+				7B2A9E932364951A0091492C /* Assets.xcassets */,
+				7B2A9EBB236495600091492C /* DataLayer */,
+				7B1B30102364AA3400A01051 /* Helpers */,
+				7B2A9E982364951A0091492C /* Info.plist */,
+				7B2A9E952364951A0091492C /* LaunchScreen.storyboard */,
+				7B2A9E90236495190091492C /* Main.storyboard */,
+				7B2A9EBA236495580091492C /* Models */,
+				7B2A9EBC2364956F0091492C /* NetworkLayer */,
+				7B1B300B2364A7B000A01051 /* Presenters */,
+				7B2A9EBD236495870091492C /* ViewControllers */,
+			);
+			path = TransformersAtWar;
+			sourceTree = "<group>";
+		};
+		7B2A9EA02364951B0091492C /* TransformersAtWarTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B2A9EA12364951B0091492C /* TransformersAtWarTests.swift */,
+				7B2A9EA32364951B0091492C /* Info.plist */,
+			);
+			path = TransformersAtWarTests;
+			sourceTree = "<group>";
+		};
+		7B2A9EAB2364951B0091492C /* TransformersAtWarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B2A9EAC2364951B0091492C /* TransformersAtWarUITests.swift */,
+				7B2A9EAE2364951B0091492C /* Info.plist */,
+			);
+			path = TransformersAtWarUITests;
+			sourceTree = "<group>";
+		};
+		7B2A9EBA236495580091492C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B2A9EBE236499A80091492C /* Transformer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7B2A9EBB236495600091492C /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		7B2A9EBC2364956F0091492C /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7B1B30132364AF9A00A01051 /* TransformersApiService.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		7B2A9EBD236495870091492C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B2A9E88236495190091492C /* TransformersAtWar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2A9EB12364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWar" */;
+			buildPhases = (
+				0197F8B1B3155A48921D306A /* [CP] Check Pods Manifest.lock */,
+				7B2A9E85236495190091492C /* Sources */,
+				7B2A9E86236495190091492C /* Frameworks */,
+				7B2A9E87236495190091492C /* Resources */,
+				421BE0941476DA18D301B0AE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TransformersAtWar;
+			productName = TransformersAtWar;
+			productReference = 7B2A9E89236495190091492C /* TransformersAtWar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B2A9E9C2364951B0091492C /* TransformersAtWarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2A9EB42364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWarTests" */;
+			buildPhases = (
+				B91096C74C1E402198D494B0 /* [CP] Check Pods Manifest.lock */,
+				7B2A9E992364951B0091492C /* Sources */,
+				7B2A9E9A2364951B0091492C /* Frameworks */,
+				7B2A9E9B2364951B0091492C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B2A9E9F2364951B0091492C /* PBXTargetDependency */,
+			);
+			name = TransformersAtWarTests;
+			productName = TransformersAtWarTests;
+			productReference = 7B2A9E9D2364951B0091492C /* TransformersAtWarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B2A9EA72364951B0091492C /* TransformersAtWarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2A9EB72364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWarUITests" */;
+			buildPhases = (
+				1F7496866164613D7BB82B24 /* [CP] Check Pods Manifest.lock */,
+				7B2A9EA42364951B0091492C /* Sources */,
+				7B2A9EA52364951B0091492C /* Frameworks */,
+				7B2A9EA62364951B0091492C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B2A9EAA2364951B0091492C /* PBXTargetDependency */,
+			);
+			name = TransformersAtWarUITests;
+			productName = TransformersAtWarUITests;
+			productReference = 7B2A9EA82364951B0091492C /* TransformersAtWarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B2A9E81236495190091492C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Denis Efremov";
+				TargetAttributes = {
+					7B2A9E88236495190091492C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					7B2A9E9C2364951B0091492C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7B2A9E88236495190091492C;
+					};
+					7B2A9EA72364951B0091492C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7B2A9E88236495190091492C;
+					};
+				};
+			};
+			buildConfigurationList = 7B2A9E84236495190091492C /* Build configuration list for PBXProject "TransformersAtWar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B2A9E80236495190091492C;
+			productRefGroup = 7B2A9E8A236495190091492C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B2A9E88236495190091492C /* TransformersAtWar */,
+				7B2A9E9C2364951B0091492C /* TransformersAtWarTests */,
+				7B2A9EA72364951B0091492C /* TransformersAtWarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B2A9E87236495190091492C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2A9E972364951A0091492C /* LaunchScreen.storyboard in Resources */,
+				7B2A9E942364951A0091492C /* Assets.xcassets in Resources */,
+				7B2A9E92236495190091492C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9E9B2364951B0091492C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9EA62364951B0091492C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0197F8B1B3155A48921D306A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransformersAtWar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F7496866164613D7BB82B24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransformersAtWarUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		421BE0941476DA18D301B0AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B91096C74C1E402198D494B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransformersAtWarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B2A9E85236495190091492C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B1B300F2364AA0400A01051 /* TransformerListPresenter.swift in Sources */,
+				7B1B300D2364A87A00A01051 /* TransformerListTableViewController.swift in Sources */,
+				7B1B30142364AF9A00A01051 /* TransformersApiService.swift in Sources */,
+				7B2A9EBF236499A80091492C /* Transformer.swift in Sources */,
+				7B1B30162364B15500A01051 /* Constants.swift in Sources */,
+				7B1B30122364AA6400A01051 /* KeychainHelper.swift in Sources */,
+				7B2A9E8D236495190091492C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9E992364951B0091492C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2A9EA22364951B0091492C /* TransformersAtWarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2A9EA42364951B0091492C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2A9EAD2364951B0091492C /* TransformersAtWarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B2A9E9F2364951B0091492C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B2A9E88236495190091492C /* TransformersAtWar */;
+			targetProxy = 7B2A9E9E2364951B0091492C /* PBXContainerItemProxy */;
+		};
+		7B2A9EAA2364951B0091492C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B2A9E88236495190091492C /* TransformersAtWar */;
+			targetProxy = 7B2A9EA92364951B0091492C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B2A9E90236495190091492C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B2A9E91236495190091492C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7B2A9E952364951A0091492C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B2A9E962364951A0091492C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B2A9EAF2364951B0091492C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7B2A9EB02364951B0091492C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B2A9EB22364951B0091492C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77C05A544E7DEAD8E261FFC /* Pods-TransformersAtWar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B2A9EB32364951B0091492C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79C9AF58F0E48BCFDD7C5D2D /* Pods-TransformersAtWar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7B2A9EB52364951B0091492C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6D848BDE259D9B7FAB5D44E /* Pods-TransformersAtWarTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersAtWar.app/TransformersAtWar";
+			};
+			name = Debug;
+		};
+		7B2A9EB62364951B0091492C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3682F95F7725729687A1628C /* Pods-TransformersAtWarTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersAtWar.app/TransformersAtWar";
+			};
+			name = Release;
+		};
+		7B2A9EB82364951B0091492C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9078EA539C8B635DFAF4B151 /* Pods-TransformersAtWarUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersAtWar;
+			};
+			name = Debug;
+		};
+		7B2A9EB92364951B0091492C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81061478319C1DDF6F3F498D /* Pods-TransformersAtWarUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GD48DS8QQ;
+				INFOPLIST_FILE = TransformersAtWarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denisefremov.TransformersAtWarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersAtWar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B2A9E84236495190091492C /* Build configuration list for PBXProject "TransformersAtWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2A9EAF2364951B0091492C /* Debug */,
+				7B2A9EB02364951B0091492C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B2A9EB12364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2A9EB22364951B0091492C /* Debug */,
+				7B2A9EB32364951B0091492C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B2A9EB42364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2A9EB52364951B0091492C /* Debug */,
+				7B2A9EB62364951B0091492C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B2A9EB72364951B0091492C /* Build configuration list for PBXNativeTarget "TransformersAtWarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2A9EB82364951B0091492C /* Debug */,
+				7B2A9EB92364951B0091492C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B2A9E81236495190091492C /* Project object */;
+}
