@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		726ADD2723662A4E007FF9CE /* TransformerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD2623662A4E007FF9CE /* TransformerDetailsViewController.swift */; };
+		726ADD472366656E007FF9CE /* UiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD462366656E007FF9CE /* UiHelper.swift */; };
+		726ADD4923666962007FF9CE /* TransformerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD4823666962007FF9CE /* TransformerDetailsPresenter.swift */; };
+		726ADD4B23669AE8007FF9CE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD4A23669AE8007FF9CE /* Enums.swift */; };
+		72CF2D772364E6CA00688735 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF2D762364E6CA00688735 /* AccessTokenAdapter.swift */; };
 		7B1B300D2364A87A00A01051 /* TransformerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */; };
 		7B1B300F2364AA0400A01051 /* TransformerListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */; };
 		7B1B30122364AA6400A01051 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B30112364AA6400A01051 /* KeychainHelper.swift */; };
@@ -45,6 +50,11 @@
 		3682F95F7725729687A1628C /* Pods-TransformersAtWarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWarTests.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWarTests/Pods-TransformersAtWarTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A0C7D3187510FBC7F810B9E /* Pods_TransformersAtWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersAtWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B630DF7C373734A7184FD6 /* Pods_TransformersAtWarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersAtWarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726ADD2623662A4E007FF9CE /* TransformerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailsViewController.swift; sourceTree = "<group>"; };
+		726ADD462366656E007FF9CE /* UiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiHelper.swift; sourceTree = "<group>"; };
+		726ADD4823666962007FF9CE /* TransformerDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailsPresenter.swift; sourceTree = "<group>"; };
+		726ADD4A23669AE8007FF9CE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		72CF2D762364E6CA00688735 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
 		79C9AF58F0E48BCFDD7C5D2D /* Pods-TransformersAtWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWar.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar.release.xcconfig"; sourceTree = "<group>"; };
 		7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListTableViewController.swift; sourceTree = "<group>"; };
 		7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListPresenter.swift; sourceTree = "<group>"; };
@@ -112,6 +122,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		726ADD2323660672007FF9CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		74092607F62DB6C286C5D29C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */,
+				726ADD4823666962007FF9CE /* TransformerDetailsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -135,6 +153,7 @@
 			children = (
 				7B1B30112364AA6400A01051 /* KeychainHelper.swift */,
 				7B1B30152364B15500A01051 /* Constants.swift */,
+				726ADD462366656E007FF9CE /* UiHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -164,6 +183,7 @@
 		7B2A9E8B236495190091492C /* TransformersAtWar */ = {
 			isa = PBXGroup;
 			children = (
+				726ADD2323660672007FF9CE /* Extensions */,
 				7B2A9E8C236495190091492C /* AppDelegate.swift */,
 				7B2A9E932364951A0091492C /* Assets.xcassets */,
 				7B2A9EBB236495600091492C /* DataLayer */,
@@ -201,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				7B2A9EBE236499A80091492C /* Transformer.swift */,
+				726ADD4A23669AE8007FF9CE /* Enums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +236,7 @@
 		7B2A9EBC2364956F0091492C /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				72CF2D762364E6CA00688735 /* AccessTokenAdapter.swift */,
 				7B1B30132364AF9A00A01051 /* TransformersApiService.swift */,
 			);
 			path = NetworkLayer;
@@ -224,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */,
+				726ADD2623662A4E007FF9CE /* TransformerDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -453,9 +476,14 @@
 				7B1B300D2364A87A00A01051 /* TransformerListTableViewController.swift in Sources */,
 				7B1B30142364AF9A00A01051 /* TransformersApiService.swift in Sources */,
 				7B2A9EBF236499A80091492C /* Transformer.swift in Sources */,
+				726ADD2723662A4E007FF9CE /* TransformerDetailsViewController.swift in Sources */,
+				726ADD472366656E007FF9CE /* UiHelper.swift in Sources */,
 				7B1B30162364B15500A01051 /* Constants.swift in Sources */,
+				726ADD4923666962007FF9CE /* TransformerDetailsPresenter.swift in Sources */,
 				7B1B30122364AA6400A01051 /* KeychainHelper.swift in Sources */,
 				7B2A9E8D236495190091492C /* AppDelegate.swift in Sources */,
+				726ADD4B23669AE8007FF9CE /* Enums.swift in Sources */,
+				72CF2D772364E6CA00688735 /* AccessTokenAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

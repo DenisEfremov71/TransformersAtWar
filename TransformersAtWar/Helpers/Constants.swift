@@ -13,8 +13,28 @@ struct Constants {
     //static let dateFormat = "yyyy-MM-dd HH:mm:ss"
     
     struct ApiEndPoints {
+        static let apiPrefix = "https://transformers-api"
         static let fetchToken = "https://transformers-api.firebaseapp.com/allspark"
-        
+        static let fetchAllTransformers = "https://transformers-api.firebaseapp.com/transformers"
+        static let fetchSpecificTransformer = "https://transformers-api.firebaseapp.com/transformers"
+        static let createNewTransformer = "https://transformers-api.firebaseapp.com/transformers"
+        static let deleteTransformer = "https://transformers-api.firebaseapp.com/transformers"
+    }
+    
+    struct ValidationMessaages {
+        static let nameMissing = "Error: name is missing."
+        static let teamMissing = "Error: team is missing. Please enter either A or D."
     }
 
+    struct ErrorMessaages {
+        static let failedToCreate = "Error: failed to create a new transformer."
+        static let failedToDelete = "Error: failed to delete the transformer:"
+        static let failedToUpdate = "Error: failed to update the transformer:"
+        static let noTransformerSelected = "Error: no transformer selected for editing"
+    }
+    
+    struct SuccessMessaages {
+        static let successCreate = "Successfully created a new transformer."
+        static let successUpdate = "Successfully updated the transformer:"
+    }
 }
