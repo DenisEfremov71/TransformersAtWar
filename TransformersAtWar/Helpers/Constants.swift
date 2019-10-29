@@ -18,6 +18,7 @@ struct Constants {
         static let fetchAllTransformers = "https://transformers-api.firebaseapp.com/transformers"
         static let fetchSpecificTransformer = "https://transformers-api.firebaseapp.com/transformers"
         static let createNewTransformer = "https://transformers-api.firebaseapp.com/transformers"
+        static let updateTransformer = "https://transformers-api.firebaseapp.com/transformers"
         static let deleteTransformer = "https://transformers-api.firebaseapp.com/transformers"
     }
     
@@ -36,5 +37,17 @@ struct Constants {
     struct SuccessMessaages {
         static let successCreate = "Successfully created a new transformer."
         static let successUpdate = "Successfully updated the transformer:"
+    }
+    
+    struct TransformerNames {
+        static let optimusPrime = "OPTIMUS PRIME"
+        static let predaking = "PREDAKING"
+    }
+    
+    struct WarResults {
+        static let allDestroyed = "Optimus Prime fought against Predaking. All transformers have been destroyed!"
+        static let autobotsWon = "Autobots won the war!"
+        static let decepticonsWon = "Decepticons won the war!"
+        static let nobodyWon = "It is a tie. The war will continue!"
     }
 }

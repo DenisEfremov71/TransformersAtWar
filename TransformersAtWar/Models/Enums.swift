@@ -9,6 +9,12 @@
 import Foundation
 
 enum Mode: String {
-    case add    = "add"
-    case edit   = "edit"
+    case add  = "add"
+    case edit = "edit"
+}
+
+enum BattleOutcome: String {
+    case win          = "win"
+    case tie          = "tie"
+    case allDestroyed = "allDestroyed"
 }

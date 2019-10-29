@@ -40,6 +40,19 @@ class UiHelper {
         }
     }
     
+    static func showActionSheet(for viewController: UIViewController, with message: String, title: String, completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            let optionMenu = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+                completion()
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            optionMenu.addAction(deleteAction)
+            optionMenu.addAction(cancelAction)
+            viewController.present(optionMenu, animated: true, completion: nil)
+        }
+    }
+    
     static func addActivityIndicator(view: UIView, activityIndicator: UIActivityIndicatorView) {
         DispatchQueue.main.async {
             activityIndicator.center = view.center

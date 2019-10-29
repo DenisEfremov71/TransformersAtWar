@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Alamofire
 
 class TransformersAtWarUITests: XCTestCase {
 
@@ -26,9 +27,15 @@ class TransformersAtWarUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTransformersList() {
+        let app = XCUIApplication()
+        let transformerCell = app.cells["cellTransformer0"]
+        let label = app.staticTexts["Name"]
+        let exists = NSPredicate(format: "exists == 1")
+        
+        transformerCell.tap()
+        expectation(for: exists, evaluatedWith: label, handler: nil)
+        waitForExpectations(timeout: 1.0, handler: nil)
     }
 
 }

@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Transformer: Codable {
+class Transformer: Codable, Comparable {
+    static func == (lhs: Transformer, rhs: Transformer) -> Bool {
+        return lhs.overallRating == rhs.overallRating
+    }
+    
     var id: String?
     var name: String
     var team: String
@@ -41,4 +45,17 @@ class Transformer: Codable {
         self.speed = speed
         self.strength = strength
     }
+}
+
+func < (lhs: Transformer, rhs: Transformer) -> Bool {
+    return (lhs.courage < rhs.courage && (rhs.courage - lhs.courage) >= 4) && (lhs.strength < rhs.strength && (rhs.strength - lhs.strength) >= 3)
+}
+
+func > (lhs: Transformer, rhs: Transformer) -> Bool {
+        return lhs.skill > rhs.skill && (lhs.skill - rhs.skill) >= 3
+}
+
+class Eliminated {
+    var id: String?
+    var team: String?
 }

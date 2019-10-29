@@ -8,15 +8,22 @@ target 'TransformersAtWar' do
   # Pods for TransformersAtWar
   pod 'SwiftKeychainWrapper', '~> 3.2.0'
   pod 'Alamofire', '~> 4.5'
+  pod 'RealmSwift'
 
   target 'TransformersAtWarTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SwiftKeychainWrapper', '~> 3.2.0'
+    pod 'Alamofire', '~> 4.5'
+    pod 'RealmSwift'
   end
 
   target 'TransformersAtWarUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SwiftKeychainWrapper', '~> 3.2.0'
+    pod 'Alamofire', '~> 4.5'
+    pod 'RealmSwift'
   end
 
 end

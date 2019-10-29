@@ -111,7 +111,7 @@ class TransformersApiService {
     
     static func updateTransformer(id: String, parameters: [String:Any], completion: @escaping (Bool) -> Void) {
         let headers: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "Bearer \(KeychainHelper.getAllSparkToken() ?? "no token")"]
-        Alamofire.request(Constants.ApiEndPoints.createNewTransformer, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request(Constants.ApiEndPoints.updateTransformer, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             
             guard response.result.error == nil else {
                 print(response.result.error!)
