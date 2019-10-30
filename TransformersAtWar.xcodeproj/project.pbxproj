@@ -13,6 +13,9 @@
 		726ADD4B23669AE8007FF9CE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD4A23669AE8007FF9CE /* Enums.swift */; };
 		726ADD4D2367B246007FF9CE /* AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD4C2367B246007FF9CE /* AlamofireTests.swift */; };
 		726ADD4F2367D5BB007FF9CE /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD4E2367D5BB007FF9CE /* ViewControllerExtensions.swift */; };
+		726ADD5123687A2F007FF9CE /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD5023687A2F007FF9CE /* RealmManager.swift */; };
+		726ADD5C2368D5F3007FF9CE /* TransformerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD5B2368D5F3007FF9CE /* TransformerCell.swift */; };
+		726ADD5F236908C0007FF9CE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726ADD5E236908C0007FF9CE /* UserDefaults+Extension.swift */; };
 		72CF2D772364E6CA00688735 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF2D762364E6CA00688735 /* AccessTokenAdapter.swift */; };
 		7B1B300D2364A87A00A01051 /* TransformerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */; };
 		7B1B300F2364AA0400A01051 /* TransformerListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B300E2364AA0400A01051 /* TransformerListPresenter.swift */; };
@@ -58,6 +61,9 @@
 		726ADD4A23669AE8007FF9CE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		726ADD4C2367B246007FF9CE /* AlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireTests.swift; sourceTree = "<group>"; };
 		726ADD4E2367D5BB007FF9CE /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		726ADD5023687A2F007FF9CE /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		726ADD5B2368D5F3007FF9CE /* TransformerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCell.swift; sourceTree = "<group>"; };
+		726ADD5E236908C0007FF9CE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		72CF2D762364E6CA00688735 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
 		79C9AF58F0E48BCFDD7C5D2D /* Pods-TransformersAtWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersAtWar.release.xcconfig"; path = "Target Support Files/Pods-TransformersAtWar/Pods-TransformersAtWar.release.xcconfig"; sourceTree = "<group>"; };
 		7B1B300C2364A87A00A01051 /* TransformerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListTableViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +135,18 @@
 		726ADD2323660672007FF9CE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				726ADD5E236908C0007FF9CE /* UserDefaults+Extension.swift */,
 				726ADD4E2367D5BB007FF9CE /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		726ADD542368CF6C007FF9CE /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				726ADD5B2368D5F3007FF9CE /* TransformerCell.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		74092607F62DB6C286C5D29C /* Frameworks */ = {
@@ -188,6 +203,7 @@
 		7B2A9E8B236495190091492C /* TransformersAtWar */ = {
 			isa = PBXGroup;
 			children = (
+				726ADD542368CF6C007FF9CE /* CustomViews */,
 				726ADD2323660672007FF9CE /* Extensions */,
 				7B2A9E8C236495190091492C /* AppDelegate.swift */,
 				7B2A9E932364951A0091492C /* Assets.xcassets */,
@@ -235,6 +251,7 @@
 		7B2A9EBB236495600091492C /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				726ADD5023687A2F007FF9CE /* RealmManager.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -519,6 +536,8 @@
 				7B1B30142364AF9A00A01051 /* TransformersApiService.swift in Sources */,
 				726ADD4F2367D5BB007FF9CE /* ViewControllerExtensions.swift in Sources */,
 				7B2A9EBF236499A80091492C /* Transformer.swift in Sources */,
+				726ADD5123687A2F007FF9CE /* RealmManager.swift in Sources */,
+				726ADD5F236908C0007FF9CE /* UserDefaults+Extension.swift in Sources */,
 				726ADD2723662A4E007FF9CE /* TransformerDetailsViewController.swift in Sources */,
 				726ADD472366656E007FF9CE /* UiHelper.swift in Sources */,
 				7B1B30162364B15500A01051 /* Constants.swift in Sources */,
@@ -527,6 +546,7 @@
 				7B2A9E8D236495190091492C /* AppDelegate.swift in Sources */,
 				726ADD4B23669AE8007FF9CE /* Enums.swift in Sources */,
 				72CF2D772364E6CA00688735 /* AccessTokenAdapter.swift in Sources */,
+				726ADD5C2368D5F3007FF9CE /* TransformerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 
 class TransformerListPresenter {
     
-    //var apiService = TransformersApiService()
+    let realmManager = RealmManager()
     
     var allTransformers = [Transformer]()
     var autobots = [Transformer]()
@@ -18,15 +18,23 @@ class TransformerListPresenter {
     var eliminatedTransformers = [Eliminated]()
     
     func getAllTransformers(completion: @escaping ([Transformer]?) -> Void) {
-        TransformersApiService.fetchAllTransformers(completion: { (success, transformers) in
-            if success {
-                completion(transformers)
-            } else {
-                completion(nil)
-            }
-        })
+        
+        // check the local Realm DB first, then - pull data from the API
+        if let transformers = realmManager.getAllTransformers() {
+            completion(transformers)
+        } else {
+            TransformersApiService.fetchAllTransformers(completion: { (success, transformers) in
+                if success {
+                    self.realmManager.saveMultipleTransformers(transformers: transformers!)
+                    completion(transformers)
+                } else {
+                    completion(nil)
+                }
+            })
+        }
     }
     
+    // TODO: implement if needed
     func getTransformer(id: String) {
         TransformersApiService.fetchTransformer(with: id)
     }
@@ -43,31 +51,32 @@ class TransformerListPresenter {
     
     func wageTheWar(transformers: [Transformer], completion: @escaping (String) -> Void) {
         allTransformers = transformers
+        
         // separate transformers into two teams: A and D
         autobots = transformers.filter{ $0.team == "A" }
         decepticons = transformers.filter{ $0.team == "D" }
+        
+        if autobots.count == 0 {
+            completion("No autobots are linued up for the war!")
+        }
+        if decepticons.count == 0 {
+            completion("No decepticons are linued up for the war!")
+        }
         
         // sort A and D by rank
         let linedUpAutobots = autobots.sorted { $0.rank > $1.rank }
         let linedUpDecepticons = decepticons.sorted { $0.rank > $1.rank }
         
-        //        for a in linedUpAutobots {
-        //            print("Name: \(a.name)")
-        //            print("Rank: \(a.rank)")
-        //        }
-        //        for d in linedUpDecepticons {
-        //            print("Name: \(d.name)")
-        //            print("Rank: \(d.rank)")
-        //        }
-        
-        // conduct the battle
+        // conduct the battle and calculate the outcome
         let numberOfBattles = min(linedUpAutobots.count, linedUpDecepticons.count)
-        //print("numberOfBattles: \(numberOfBattles)")
+        var battleOutcome: BattleOutcome = .tie
+        
         for i in 0..<numberOfBattles {
             print("\(linedUpAutobots[i].name) from \(linedUpAutobots[i].team) team is facing \(linedUpDecepticons[i].name) from \(linedUpDecepticons[i].team)")
             let (outcome,eliminated) = determineBattleOutcome(autobot: linedUpAutobots[i], decepticon: linedUpDecepticons[i])
             if outcome == .allDestroyed {
                 markAsDestroyed(outcome: .allDestroyed)
+                battleOutcome = outcome
                 break
             } else if outcome == .win {
                 markAsDestroyed(outcome: .win, loser: eliminated)
@@ -80,15 +89,17 @@ class TransformerListPresenter {
                 elimD.team = linedUpDecepticons[i].team
                 markAsDestroyed(outcome: .tie, winner: elimA, loser: elimD)
             }
+            battleOutcome = outcome
         }
         
-        // assumption was made that all the destroyed transformers have to be deleted from the list
+        // logic to select the war result message
+        let warOutcome = summarizeTheWarResults(outcome: battleOutcome)
         
-        
-        let outcome = summarizeTheWarResults()
+        // reset the eliminated transformers array
+        destroyTheLosers()
         
         // send back the results
-        completion("War is over. \(outcome)")
+        completion("War is over. \(warOutcome)")
     }
     
     func determineBattleOutcome(autobot: Transformer, decepticon: Transformer) -> (BattleOutcome,Eliminated?) {
@@ -168,13 +179,17 @@ class TransformerListPresenter {
         }
     }
     
-    func summarizeTheWarResults() -> String {
+    func summarizeTheWarResults(outcome: BattleOutcome) -> String {
+        
+        // Optimus Prime fought against Predaking
+        if outcome == .allDestroyed {
+            return Constants.WarResults.allDestroyed
+        }
+        
         let eliminatedAutobots = eliminatedTransformers.filter{ $0.team == "A" }
         let eliminatedDecepticons = eliminatedTransformers.filter{ $0.team == "D" }
         
-        if allTransformers.count == eliminatedTransformers.count {
-            return Constants.WarResults.allDestroyed
-        } else if eliminatedAutobots.count < eliminatedDecepticons.count {
+        if eliminatedAutobots.count < eliminatedDecepticons.count {
             return Constants.WarResults.autobotsWon
         } else if eliminatedAutobots.count > eliminatedDecepticons.count {
             return Constants.WarResults.decepticonsWon
@@ -184,7 +199,9 @@ class TransformerListPresenter {
     }
     
     func destroyTheLosers() {
-        // TODO: implement it
+        // assumption was made - the loser don't have to be deleted from DB and API
+        // just resetting the eliminated transformers array for now
+        eliminatedTransformers = [Eliminated]()
     }
     
 }

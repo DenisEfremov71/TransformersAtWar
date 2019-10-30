@@ -73,17 +73,20 @@ class TransformerListTableViewController: UITableViewController, TransformerDeta
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTransformer", for: indexPath)
-
-        // Configure the cell...
-        if transformers[indexPath.row].team == "A" {
-            cell.imageView?.image = UIImage.init(named: "autobot")
-        } else {
-            cell.imageView?.image = UIImage.init(named: "decepticon")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transformerCell", for: indexPath)
+        
+        if let transformerCell = cell as? TransformerCell {
+            // Configure the cell...
+            if transformers[indexPath.row].team == "A" {
+                transformerCell.teamImage?.image = UIImage.init(named: "autobot")
+            } else {
+                transformerCell.teamImage?.image = UIImage.init(named: "decepticon")
+            }
+            transformerCell.lblName.text = transformers[indexPath.row].name
+            transformerCell.lblOverallRating.text = "Overall rating: \(transformers[indexPath.row].overallRating)"
+            transformerCell.lblAttributes.text = "Attributes: \(transformers[indexPath.row].strength), \(transformers[indexPath.row].intelligence), \(transformers[indexPath.row].speed), \(transformers[indexPath.row].endurance), \(transformers[indexPath.row].rank), \(transformers[indexPath.row].courage), \(transformers[indexPath.row].firepower), \(transformers[indexPath.row].skill)"
+            transformerCell.accessibilityIdentifier = "transformerCell\(indexPath.row)"
         }
-        cell.textLabel?.text = transformers[indexPath.row].name
-        cell.detailTextLabel?.text = "Overall rating: \(transformers[indexPath.row].overallRating)"
-        cell.accessibilityIdentifier = "cellTransformer\(indexPath.row)"
 
         return cell
     }
@@ -94,7 +97,9 @@ class TransformerListTableViewController: UITableViewController, TransformerDeta
             let name = transformers[indexPath.row].name
             presenter.deleteTransformer(id: id) { (success) in
                 if success {
-                    self.transformers.remove(at: indexPath.row)
+                    let index = indexPath.row
+                    self.presenter.realmManager.deleteTransformer(transformer: self.transformers[index])
+                    self.transformers.remove(at: index)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 } else {
                     UiHelper.showAlert(for: self, with: "\(Constants.ErrorMessaages.failedToDelete) \(name)")
@@ -134,6 +139,10 @@ class TransformerListTableViewController: UITableViewController, TransformerDeta
     }
     
     @objc func wageTheWar() {
+        if transformers.count == 0 {
+            UiHelper.showAlert(for: self, with: "Please add transformers!")
+            return
+        }
         print("War is about to begin...")
         presenter.wageTheWar(transformers: transformers) { (result) in
             UiHelper.showAlert(for: self, with: result, completion: {

@@ -9,37 +9,6 @@
 import Foundation
 import Alamofire
 
-/*
-class AccessTokenAdapter: RequestAdapter, RequestRetrier {
-    private let accessToken: String
-    
-    init(accessToken: String) {
-        self.accessToken = accessToken
-    }
-    
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-        var urlRequest = urlRequest
-        
-        if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Constants.ApiEndPoints.apiPrefix) {
-            //urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-            urlRequest.setValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2Zvcm1lcnNJZCI6Ii1MczdJZ1M2bWlrSVpjcmVHRy1fIiwiaWF0IjoxNTcyMDk3NDE0fQ.NyRjEmSd04JuLrcWalamVMRwkFwpKArYiC8M1MQqr-E", forHTTPHeaderField: "Authorization")
-        }
-        
-        return urlRequest
-    }
-    
-    func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-        guard let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 else {
-            completion(false, 0.0)
-            return
-        }
-    }
-}
-*/
-
-////////////////////AccessTokenAdapter
-
-//class OAuth2Handler: RequestAdapter, RequestRetrier {
 class AccessTokenAdapter: RequestAdapter, RequestRetrier {
     private typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?) -> Void
     
@@ -71,7 +40,6 @@ class AccessTokenAdapter: RequestAdapter, RequestRetrier {
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(baseURLString) {
             var urlRequest = urlRequest
             urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-            //urlRequest.setValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2Zvcm1lcnNJZCI6Ii1Mc0N4Snp0WFhUOTRpM3haMklIIiwiaWF0IjoxNTcyMTkyMjEwfQ.Wlc7jFuvFUwZjwTpeTIvhZ2WWbD-YcnG6SfKUX2npaY", forHTTPHeaderField: "Authorization")
             return urlRequest
         }
         

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Transformer: Codable, Comparable {
     static func == (lhs: Transformer, rhs: Transformer) -> Bool {
@@ -32,6 +33,7 @@ class Transformer: Codable, Comparable {
     
     init(id: String?, name: String, team: String, team_icon: String?, courage: Int, endurance: Int,
          firepower: Int, intelligence: Int, rank: Int, skill: Int, speed: Int, strength: Int) {
+        
         self.id = id
         self.name = name
         self.team = team
@@ -58,4 +60,23 @@ func > (lhs: Transformer, rhs: Transformer) -> Bool {
 class Eliminated {
     var id: String?
     var team: String?
+}
+
+class RealmTransformer: Object {
+    @objc dynamic var id = ""
+    @objc dynamic var name = ""
+    @objc dynamic var team = ""
+    @objc dynamic var team_icon = ""
+    @objc dynamic var courage = 0
+    @objc dynamic var endurance = 0
+    @objc dynamic var firepower = 0
+    @objc dynamic var intelligence = 0
+    @objc dynamic var rank = 0
+    @objc dynamic var skill = 0
+    @objc dynamic var speed = 0
+    @objc dynamic var strength = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

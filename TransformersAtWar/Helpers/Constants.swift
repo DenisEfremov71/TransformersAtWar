@@ -10,8 +10,6 @@ import Foundation
 
 struct Constants {
     
-    //static let dateFormat = "yyyy-MM-dd HH:mm:ss"
-    
     struct ApiEndPoints {
         static let apiPrefix = "https://transformers-api"
         static let fetchToken = "https://transformers-api.firebaseapp.com/allspark"
@@ -30,6 +28,7 @@ struct Constants {
     struct ErrorMessaages {
         static let failedToCreate = "Error: failed to create a new transformer."
         static let failedToDelete = "Error: failed to delete the transformer:"
+        static let failedToGetToken = "Error: failed to get token"
         static let failedToUpdate = "Error: failed to update the transformer:"
         static let noTransformerSelected = "Error: no transformer selected for editing"
     }

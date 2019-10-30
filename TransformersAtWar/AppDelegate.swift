@@ -13,12 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UserDefaults.isFirstLaunch()
+        
         if KeychainHelper.getAllSparkToken() == nil {
-            TransformersApiService.fetchAllSparkToken()
+            TransformersApiService.fetchAllSparkToken { (success) in
+                if success == false {
+                    let vc = application.topMostViewController()
+                    UiHelper.showAlert(for: vc!, with: Constants.ErrorMessaages.failedToGetToken)
+                }
+            }
         }
+        
         return true
     }
 

@@ -11,15 +11,21 @@ import Alamofire
 
 class TransformersApiService {
     
-    static func fetchAllSparkToken() {
+    static func fetchAllSparkToken(completion: @escaping (Bool) -> Void) {
         Alamofire.request(Constants.ApiEndPoints.fetchToken).responseString { (response) in
+            
+            if response.response?.statusCode != 200 {
+                completion(false)
+            }
+            
             guard let token = response.value else {
-                //TODO: add error handling!!!
+                completion(false)
                 return
             }
+            
             KeychainHelper.setAllSparkToken(allSparkToken: token)
-            //self.sessionManager.adapter = AccessTokenAdapter(accessToken: token)
             print("JWT Token: \(KeychainHelper.getAllSparkToken() ?? "no token")")
+            completion(true)
         }
     }
     
@@ -109,26 +115,28 @@ class TransformersApiService {
         }
     }
     
-    static func updateTransformer(id: String, parameters: [String:Any], completion: @escaping (Bool) -> Void) {
+    static func updateTransformer(id: String, parameters: [String:Any], completion: @escaping (Bool, Transformer?) -> Void) {
         let headers: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "Bearer \(KeychainHelper.getAllSparkToken() ?? "no token")"]
         Alamofire.request(Constants.ApiEndPoints.updateTransformer, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             
             guard response.result.error == nil else {
                 print(response.result.error!)
-                completion(false)
+                completion(false, nil)
                 return
             }
             
-            guard let statusCode = response.response?.statusCode else {
-                print("No status code returned")
-                completion(false)
+            guard let data = response.data else {
+                print("Error: no data returned")
+                completion(false, nil)
                 return
             }
             
-            if statusCode == 200 {
-                completion(true)
-            } else {
-                completion(false)
+            do {
+                let newTransformer = try JSONDecoder().decode(Transformer.self, from: data)
+                completion(true, newTransformer)
+            } catch let error {
+                print(error.localizedDescription)
+                completion(false, nil)
             }
         }
     }

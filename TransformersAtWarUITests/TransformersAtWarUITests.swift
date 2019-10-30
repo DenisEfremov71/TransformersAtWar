@@ -29,13 +29,43 @@ class TransformersAtWarUITests: XCTestCase {
 
     func testTransformersList() {
         let app = XCUIApplication()
-        let transformerCell = app.cells["cellTransformer0"]
+        let transformerCell = app.cells["transformerCell0"]
         let label = app.staticTexts["Name"]
         let exists = NSPredicate(format: "exists == 1")
         
         transformerCell.tap()
         expectation(for: exists, evaluatedWith: label, handler: nil)
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
+    func testPerformance() {
+        self.measure {
+            
+            let app = XCUIApplication()
+            let overallRating36StaticText = app.tables/*@START_MENU_TOKEN@*/.staticTexts["Overall rating: 36"]/*[[".cells[\"transformerCell0\"].staticTexts[\"Overall rating: 36\"]",".staticTexts[\"Overall rating: 36\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            overallRating36StaticText.tap()
+            
+            let element = app.otherElements.containing(.navigationBar, identifier:"Transformer Details").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+            element.children(matching: .other).element(boundBy: 0).children(matching: .textField).element.tap()
+            
+            let deleteKey = app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            deleteKey.tap()
+            deleteKey.tap()
+            deleteKey.tap()
+            
+            let aKey = app/*@START_MENU_TOKEN@*/.keys["a"]/*[[".keyboards.keys[\"a\"]",".keys[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            aKey.tap()
+            aKey.tap()
+            element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element.tap()
+            deleteKey.tap()
+            deleteKey.tap()
+            
+            let aKey2 = app/*@START_MENU_TOKEN@*/.keys["A"]/*[[".keyboards.keys[\"A\"]",".keys[\"A\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            aKey2.tap()
+            element.children(matching: .other).element(boundBy: 2).sliders["44%"].swipeLeft()
+            app.navigationBars["Transformer Details"].buttons["Transformers at War"].tap()
+            
+        }
     }
 
 }
