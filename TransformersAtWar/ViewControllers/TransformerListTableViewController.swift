@@ -144,10 +144,12 @@ class TransformerListTableViewController: UITableViewController, TransformerDeta
             return
         }
         print("War is about to begin...")
-        presenter.wageTheWar(transformers: transformers) { (result) in
-            UiHelper.showAlert(for: self, with: result, completion: {
-                // can add additional logic on the end of the war
-            })
+        createSpinnerView() {
+            self.presenter.wageTheWar(transformers: self.transformers) { (result) in
+                UiHelper.showAlert(for: self, with: result, completion: {
+                    // can add additional logic on the end of the war
+                })
+            }
         }
     }
     

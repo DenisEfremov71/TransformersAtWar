@@ -56,6 +56,27 @@ extension TransformerDetailsViewController {
     }
 }
 
+extension TransformerListTableViewController {
+    func createSpinnerView(completion: @escaping () -> Void) {
+        let child = SpinnerViewController()
+        
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+            completion()
+        }
+    }
+}
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -83,11 +104,5 @@ extension UIViewController {
             return tab.topMostViewController()
         }
         return self.presentedViewController!.topMostViewController()
-    }
-}
-
-extension UIApplication {
-    func topMostViewController() -> UIViewController? {
-        return self.keyWindow?.rootViewController?.topMostViewController()
     }
 }
